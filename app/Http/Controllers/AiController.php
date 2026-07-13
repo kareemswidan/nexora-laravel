@@ -1,0 +1,5 @@
+<?php
+namespace App\Http\Controllers;
+use App\Models\Product;
+use Illuminate\Http\Request;
+class AiController extends Controller { public function index(){return view('ai');} public function recommend(Request $request){$query=mb_strtolower($request->validate(['query'=>'required|string|min:3|max:500'])['query']);$products=Product::where('is_active',true)->get()->map(function($p)use($query){$text=mb_strtolower($p->name.' '.$p->name_ar.' '.$p->description.' '.$p->description_ar.' '.$p->category.' '.$p->category_ar);$score=0;foreach(preg_split('/\s+/u',$query)as$word)if(mb_strlen($word)>2&&str_contains($text,$word))$score+=2;if(str_contains($query,'design')||str_contains($query,'تصميم'))$score+=$p->category==='Creative'?6:0;if(str_contains($query,'code')||str_contains($query,'برمج'))$score+=$p->category==='Development'?6:0;if(str_contains($query,'security')||str_contains($query,'حما'))$score+=$p->category==='Security'?6:0;$p->match_score=$score;return $p;})->sortByDesc('match_score')->take(2);return view('ai',compact('query','products'));} }
