@@ -22,8 +22,8 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cart/{product}', [CartController::class, 'add'])->name('cart.add');
 Route::delete('/cart/{product}', [CartController::class, 'remove'])->name('cart.remove');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
-Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
-Route::get('/order/success/{order}', [CheckoutController::class, 'success'])->name('order.success');
+Route::post('/checkout', [CheckoutController::class, 'store'])->middleware('throttle:10,1')->name('checkout.store');
+Route::get('/order/success/{order}', [CheckoutController::class, 'success'])->middleware(['signed', 'throttle:30,1'])->name('order.success');
 Route::get('/orders/track', [CheckoutController::class, 'trackForm'])->name('orders.track');
-Route::post('/orders/track', [CheckoutController::class, 'track'])->name('orders.find');
+Route::post('/orders/track', [CheckoutController::class, 'track'])->middleware('throttle:10,1')->name('orders.find');
 

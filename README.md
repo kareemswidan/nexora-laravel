@@ -2,6 +2,12 @@
 
 Nexora is a polished bilingual marketplace for digital products, built with Laravel, PHP, MySQL, Blade, and a privacy-first local AI recommendation experience.
 
+[![CI](https://github.com/kareemswidan/nexora-laravel/actions/workflows/ci.yml/badge.svg)](https://github.com/kareemswidan/nexora-laravel/actions/workflows/ci.yml)
+
+Engineering documentation: [architecture and data model](docs/ARCHITECTURE.md) · [checkout and order security](docs/SECURITY.md)
+
+Public full-stack demo: [open Nexora](https://kareem-swidan-dev.kareemswidan050.chatgpt.site/nexora). The checkout is explicitly marked as a demo and returns a trackable order number without collecting a real card.
+
 ![Nexora homepage](docs/screenshots/01-home-en.png)
 
 ## Highlights
