@@ -6,7 +6,7 @@ Nexora is a polished bilingual marketplace for digital products, built with Lara
 
 Engineering documentation: [architecture and data model](docs/ARCHITECTURE.md) · [checkout and order security](docs/SECURITY.md)
 
-Public full-stack demo: [open Nexora](https://kareem-swidan-dev.kareemswidan050.chatgpt.site/nexora). The checkout is explicitly marked as a demo and returns a trackable order number without collecting a real card.
+Public full-stack demo: [open Nexora](https://kareem-product-suite.kareemswidan11.workers.dev/nexora). The checkout is explicitly marked as a demo and returns a trackable order number without collecting a real card.
 
 ![Nexora homepage](docs/screenshots/01-home-en.png)
 
