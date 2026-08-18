@@ -30,3 +30,28 @@
 [data-lang="ar"] body{font-family:"IBM Plex Sans Arabic","Alexandria",Manrope,sans-serif;letter-spacing:0}[data-lang="ar"] h1,[data-lang="ar"] h2,[data-lang="ar"] h3,[data-lang="ar"] strong,[data-lang="ar"] button{font-family:"Alexandria","IBM Plex Sans Arabic",sans-serif}[data-lang="ar"] .hero h1,[data-lang="ar"] .page-hero h1,[data-lang="ar"] .product-detail h1,[data-lang="ar"] .ai-page h1,[data-lang="ar"] .about-page h1,[data-lang="ar"] .success h1,[data-lang="ar"] .narrow-page h1{letter-spacing:-2px;line-height:1.18}[data-lang="ar"] .hero>p,[data-lang="ar"] .page-hero>p,[data-lang="ar"] .product-detail,[data-lang="ar"] .product-info,[data-lang="ar"] .ai-page>div,[data-lang="ar"] .ai-console,[data-lang="ar"] .about-grid,[data-lang="ar"] .values,[data-lang="ar"] .checkout-page form,[data-lang="ar"] .checkout-page aside,[data-lang="ar"] .order-track,[data-lang="ar"] .drawer,[data-lang="ar"] .ai-modal,[data-lang="ar"] .market-cta>div,[data-lang="ar"] .section-head>div,[data-lang="ar"] .why-title{direction:rtl;text-align:right}[data-lang="ar"] .marketplace-hero h1,[data-lang="ar"] .marketplace-hero>p{direction:rtl;text-align:right;max-width:72%}[data-lang="ar"] .hero h1,[data-lang="ar"] .hero>p{direction:rtl;text-align:right;max-width:720px}[data-lang="ar"] .hero-metrics{direction:rtl;max-width:72%;justify-content:flex-start}[data-lang="ar"] .category b{float:left}[data-lang="ar"] .buy del{margin-left:0;margin-right:6px}[data-lang="ar"] .rating span{margin-left:0;margin-right:8px}[data-lang="ar"] .promptbox textarea,[data-lang="ar"] .ai-console textarea,[data-lang="ar"] input,[data-lang="ar"] textarea{direction:rtl;text-align:right;font-family:"IBM Plex Sans Arabic",sans-serif}[data-lang="ar"] .answer{text-align:right}[data-lang="ar"] .page-footer p{direction:rtl}[data-lang="ar"] .page-footer>div,[data-lang="ar"] .subnav>div,[data-lang="ar"] .actions{direction:ltr}[data-lang="ar"] .subnav nav,[data-lang="ar"] .navlinks{direction:rtl}[data-lang="ar"] .buyer-strip,[data-lang="ar"] .impact-row,[data-lang="ar"] .floating-trust,[data-lang="ar"] .checkout-steps{direction:rtl}[data-lang="ar"] .product-stage,[data-lang="ar"] .marketplace-hero:after,[data-lang="ar"] .hero-orbit{direction:ltr}[data-lang="ar"] .micro,[data-lang="ar"] .eyebrow,[data-lang="ar"] .page-hero>span,[data-lang="ar"] .why-title>span{letter-spacing:.5px}[data-lang="ar"] .hero-orbit{right:-10px;left:auto}[data-lang="ar"] .footer div{text-align:right}
 @media(max-width:580px){.language-toggle{display:inline-flex!important;align-items:center;justify-content:center;min-width:44px}.subnav>div .language-toggle{display:inline-flex!important}[data-lang="ar"] .marketplace-hero h1,[data-lang="ar"] .marketplace-hero>p,[data-lang="ar"] .hero-metrics{max-width:100%}[data-lang="ar"] .hero h1{font-size:44px}}
 .language-toggle,.navbag{border:1px solid var(--line);border-radius:999px;background:var(--card);padding:9px 14px!important;text-decoration:none;font-size:11px}.navbag b{background:var(--lime);color:#111;border-radius:50%;padding:3px 7px}.flash{margin-top:14px;padding:12px 16px;border-radius:12px;background:#e7f8cf;color:#42651a;font-size:12px}.checkout{border:0;cursor:pointer}.form-error{color:#b23b3b}.reveal{opacity:1}.reveal:not(.visible){animation:revealUp .65s both}
+
+/* --- Arabic typography ------------------------------------------------------
+   Measured on the deployed Arabic home page at 1280px: the hero h1 ran at
+   93.4px with -2px tracking, the section h2 at 51.2px with -2px, .badge at 8px
+   with +1px tracking on a dark pill it did not have the contrast for (2.12),
+   and .category at 9px with +1px and uppercase. Arabic joins its letters, so
+   any tracking pulls the joins apart rather than spacing the word, and
+   uppercase does nothing to an Arabic glyph. The small end of the scale is
+   also a Latin scale: 8-10px is legible in Manrope and is not in Arabic.
+   Scoped to [dir="rtl"], so the English design is unchanged. */
+[dir="rtl"] * { letter-spacing: 0 !important; text-transform: none !important; }
+[dir="rtl"] :is(.hero h1, .page-hero h1, .product-detail h1, .ai-page h1,
+  .about-page h1, .success h1, .narrow-page h1, .marketplace-hero h1) { line-height: 1.35; }
+[dir="rtl"] :is(.section-head h2, .why h2, .ai-banner h2, .drawer h2, .ai-modal h2) { line-height: 1.35; }
+[dir="rtl"] :is(.badge, .format, .category, .micro, .eyebrow, .core span,
+  .trust > span, .ticker, .answer b, .ai-banner small, .features article > b,
+  .cart-list small, .footer, .privacy, .buy del, .buy button,
+  .filters button, .section-head span, .why-title span, .view-orbit,
+  .theme-toggle b, .page-footer div) { font-size: 11.5px; }
+[dir="rtl"] :is(.navlinks a, .product p, .features p, .empty p, .answer p,
+  .avatars i, .product-info, .actions button) { font-size: 13.5px; }
+/* .badge sits inside an unstyled <a>, so it inherited the browser's link blue
+   and measured 2.12 against its own dark pill. */
+[dir="rtl"] :is(.buy a, .page-footer p, .nxd-group h4) { font-size: 12.5px; }
+[dir="rtl"] .badge { color: #f5f4f0; }
