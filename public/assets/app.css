@@ -63,3 +63,10 @@
    whole 152px sphere and 171,912px2 of the orbit ring, so the outlined second
    line ran straight through the logo. Restate the mirror after that rule. */
 [dir="rtl"] .hero-orbit { right: auto; left: -10px; }
+/* Same mirror problem as .hero-orbit, in two more places. Both are a large
+   decorative glyph pinned to the right edge, which in Arabic is the edge the
+   heading is aligned to, and neither had a right-to-left rule at all. Measured
+   at 1920: the marketplace star covered 23,940px2 of the shop headline, and the
+   about-page star sat on top of "بحث أقل. إبداع أكثر." at 53% white. */
+[dir="rtl"] .marketplace-hero::after { right: auto; left: 5%; }
+[dir="rtl"] .about-quote::after { right: auto; left: 8%; }
