@@ -55,3 +55,11 @@
    and measured 2.12 against its own dark pill. */
 [dir="rtl"] :is(.buy a, .page-footer p, .nxd-group h4) { font-size: 12.5px; }
 [dir="rtl"] .badge { color: #f5f4f0; }
+/* The hero orbit is decoration that sits opposite the headline: on the right in
+   English, where the headline is left-aligned. The stylesheet already mirrors it
+   for right-to-left, but a later [data-lang="ar"] rule of equal specificity puts
+   it back on the right — the same side the Arabic headline is aligned to. The
+   two then sat on top of each other: measured at 1920, the h1 box covered the
+   whole 152px sphere and 171,912px2 of the orbit ring, so the outlined second
+   line ran straight through the logo. Restate the mirror after that rule. */
+[dir="rtl"] .hero-orbit { right: auto; left: -10px; }
